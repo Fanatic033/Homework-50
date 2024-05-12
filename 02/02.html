@@ -3,8 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div id="app"></div>
+<script type="text/babel">
+    const Header = ({logo, slogan}) => {
+        return(
+            <header className="header">
+                <a href="#" className="logo">
+                    <img src={logo} alt="" className="logotype"/>
+                </a>
+                <h2 className="slogan">{slogan}</h2>
+                <input type="text" placeholder="Search" className="search"/>
+            </header>
+        )
+    }
 
+    const page = (
+        <>
+            <Header logo={'https://cdn.mos.cms.futurecdn.net/baYs9AuHxx9QXeYBiMvSLU-650-80.jpg.webp'} slogan="At NASA, we make Air and Space available for everyone."/>
+        </>
+    )
+
+    const root = ReactDOM.createRoot( document.getElementById('app'));
+    root.render(page)
+</script>
 </body>
 </html>
