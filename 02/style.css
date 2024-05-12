@@ -28,3 +28,41 @@ body{
     font-size: 18px;
     border-radius: 5px;
 }
+nav{
+    background: #583fc1;
+    padding: 15px 0;
+
+}
+.navigation{
+    display: flex;
+    margin: 0 0 0 50px;
+}
+li{
+    list-style: none;
+    margin-right: 50px;
+    font-size: 18px ;
+}
+a{
+    text-decoration: none;
+    color: #f3efef;
+}
+.active{
+    text-decoration: overline;
+    width: 5px;
+}
+article{
+}
+article p{
+    font-size: 20px;
+    width: 60%;
+    display: inline-block;
+}
+article img{
+    width: 30%;
+    float: left;
+    margin-right: 20px;
+    border-radius: 3px;
+}
+h1{
+    font-size: 2.5em;
+}

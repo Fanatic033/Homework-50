@@ -12,7 +12,7 @@
 <div id="app"></div>
 <script type="text/babel">
     const Header = ({logo, slogan}) => {
-        return(
+        return (
             <header className="header">
                 <a href="#" className="logo">
                     <img src={logo} alt="" className="logotype"/>
@@ -23,13 +23,57 @@
         )
     }
 
+    const Sidebar = ({}) => {
+        return (
+            <nav>
+                <ul className="navigation">
+                    <li><a href="">Home</a></li>
+                    <li><a href="">News</a></li>
+                    <li><a href="#">Space</a></li>
+                    <li className="active"><a href="#">Documentation</a></li>
+                </ul>
+            </nav>
+        )
+
+    }
+    const Content = ({photo,topic}) => {
+        return (
+            <main>
+                <article>
+                    <figure>
+                        <h1>
+                            {topic}
+                        </h1>
+                        <img src={photo}/>
+                        <p>
+                            The Sun emitted a strong solar flare, peaking at 2:54 a.m. ET on May 10, 2024. NASA’s Solar
+                            Dynamics Observatory, which watches the Sun constantly, captured an image of the event.
+                        </p>
+                        <p>NASA’s Solar Dynamics Observatory captured this image of a solar flare – as seen in the
+                            bright flash toward the middle of the image – on May 10, 2024. The image shows a subset of
+                            extreme ultraviolet light that highlights the extremely hot material in flares and which is
+                            colorized in gold. Credit: NASA/SDO</p>
+                        <p>Solar flares are powerful bursts of energy. Flares and solar eruptions can impact radio
+                            communications, electric power grids, navigation signals, and pose risks to spacecraft and
+                            astronauts.
+                        </p>
+                        <p>This flare is classified as an X3.9 flare. X-class denotes the most intense flares, while the number provides more information about its strength.</p>
+                        <p>To see how such space weather may affect Earth, please visit NOAA’s Space Weather Prediction Center https://spaceweather.gov/, the U.S. government’s official source for space weather forecasts, watches, warnings, and alerts. NASA works as a research arm of the nation’s space weather effort. NASA observes the Sun and our space environment constantly with a fleet of spacecraft that study everything from the Sun’s activity to the solar atmosphere, and to the particles and magnetic fields in the space surrounding Earth.</p>
+                    </figure>
+                </article>
+            </main>
+        )
+    }
     const page = (
         <>
-            <Header logo={'https://cdn.mos.cms.futurecdn.net/baYs9AuHxx9QXeYBiMvSLU-650-80.jpg.webp'} slogan="At NASA, we make Air and Space available for everyone."/>
+            <Header logo={'https://cdn.mos.cms.futurecdn.net/baYs9AuHxx9QXeYBiMvSLU-650-80.jpg.webp'}
+                    slogan="At NASA, we make Air and Space available for everyone."/>
+            <Sidebar/>
+            <Content topic='Strong Solar Flare Erupts from Sun' photo={'https://blogs.nasa.gov/solarcycle25/wp-content/uploads/sites/304/2024/05/SDO-X3pt9-Flare-May-10-2024-131-171-crop.jpg?resize=1024,1024'}/>
         </>
     )
 
-    const root = ReactDOM.createRoot( document.getElementById('app'));
+    const root = ReactDOM.createRoot(document.getElementById('app'));
     root.render(page)
 </script>
 </body>
