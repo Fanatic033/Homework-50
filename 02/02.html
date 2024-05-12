@@ -27,8 +27,8 @@
         return (
             <nav>
                 <ul className="navigation">
-                    <li><a href="">Home</a></li>
-                    <li><a href="">News</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">News</a></li>
                     <li><a href="#">Space</a></li>
                     <li className="active"><a href="#">Documentation</a></li>
                 </ul>
@@ -64,12 +64,29 @@
             </main>
         )
     }
+
+    const Footer = ({logo}) =>{
+        return(
+            <footer className="foot">
+                <a href="#" className="logo">
+                    <img src={logo} alt="" className="footer-logotype"/>
+                </a>
+                <div className="links">
+                    <a href='#'>Privacy Policy</a>
+                    <a href='#'>Contact NASA</a>
+                    <a href='#'>Sitemap</a>
+                    <a href='#'>For media</a>
+                </div>
+            </footer>
+        )
+    }
     const page = (
         <>
             <Header logo={'https://cdn.mos.cms.futurecdn.net/baYs9AuHxx9QXeYBiMvSLU-650-80.jpg.webp'}
                     slogan="At NASA, we make Air and Space available for everyone."/>
             <Sidebar/>
             <Content topic='Strong Solar Flare Erupts from Sun' photo={'https://blogs.nasa.gov/solarcycle25/wp-content/uploads/sites/304/2024/05/SDO-X3pt9-Flare-May-10-2024-131-171-crop.jpg?resize=1024,1024'}/>
+            <Footer logo={"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/NASA_logo.svg/1280px-NASA_logo.svg.png"}/>
         </>
     )
 
