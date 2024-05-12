@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        .movie{
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            margin-top: 100px;
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: center;
+            width: 350px;
+            border-radius: 15px;
+        }
+        .image {
+            margin-top: 25px;
+            width: 200px;
+            height: 275px;
+        }
+    </style>
+</head>
+<body>
+<div id="app"></div>
+
+<script type="text/babel">
+    const Card = (props) =>{
+   return(
+       <div className="movie">
+           <p>{props.year}</p>
+           <h2>{props.name}</h2>
+       <img src={props.poster} alt={props.name} className="image"/>
+       </div>
+   )
+    }
+    const Movie = (
+        <div>
+            <Card  name='Интерстеллар' year='Дата премьеры: 2014г' poster={'https://www.originalfilmart.com/cdn/shop/products/interstellar_2014_advance_original_film_art_682852f2-23f6-46de-a1db-4029d5b6f0b4_5000x.jpg?v=1574284010'}/>
+            <Card  name='Мстители:Финал' year='Дата премьеры: 26 апреля 2019г.' poster={'https://www.movieposters.com/cdn/shop/products/108b520c55e3c9760f77a06110d6a73b_480x.progressive.jpg?v=1573652543'}/>
+        </div>
+    )
+    const root = ReactDOM.createRoot( document.getElementById('app'));
+    root.render(Movie)
+</script>
+</body>
+</html>
